@@ -1,4 +1,4 @@
-# .stem: Empowered Learning
+# *.stem:     Empowered Learning
 ## Overview
 .stem is a pioneering education platform aimed at revolutionizing global education by prioritizing individual passions and community-driven learning experiences.
 
