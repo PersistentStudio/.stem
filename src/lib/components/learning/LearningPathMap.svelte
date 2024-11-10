@@ -2,7 +2,7 @@
     import { onMount, createEventDispatcher } from 'svelte';
     import { fade, slide } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-    import { stemCore } from '$lib/core';
+    import StemCore from '@/lib/stemcore';
   
     export let domainPath: string;
     export let userProgress: any;
@@ -24,7 +24,7 @@
     let zoom = 1;
   
     onMount(async () => {
-      pathData = await stemCore.getLearningPathStructure(domainPath);
+      pathData = await StemCore.getLearningPathStructure(domainPath);
       isLoading = false;
       requestAnimationFrame(drawConnections);
     });
@@ -122,10 +122,11 @@
       drawConnections();
     }
   </script>
-  
-  <div 
+
+    
+  <!--bind:this={container}-->
+  <button 
     class="learning-map"
-    bind:this={container}
     on:mousedown={handleMouseDown}
     on:mousemove={handleMouseMove}
     on:mouseup={handleMouseUp}
@@ -167,13 +168,13 @@
         style="transform: translate({viewportOffset.x}px, {viewportOffset.y}px) scale({zoom})"
       >
         {#each pathData.nodes as node}
-          <div
+          <!--bind:this={nodes.set(node.id, null)}-->
+          <button
             class="node {node.type}"
             class:active={activeNode === node.id}
             class:completed={userProgress[node.id] === 100}
             class:in-progress={userProgress[node.id] > 0 && userProgress[node.id] < 100}
             data-node-id={node.id}
-            bind:this={nodes.set(node.id, null)}
             on:click={() => handleNodeClick(node.id)}
             on:mouseenter={() => hoveredNode = node.id}
             on:mouseleave={() => hoveredNode = null}
@@ -214,7 +215,7 @@
                 {/if}
               </div>
             {/if}
-          </div>
+            </button>
         {/each}
       </div>
   
@@ -234,7 +235,7 @@
         </button>
       </div>
     {/if}
-  </div>
+    </button>
   
   <style lang="postcss">
     .learning-map {
@@ -245,7 +246,7 @@
     .connections-layer {
       @apply absolute inset-0 pointer-events-none;
   
-      .connection {
+      &.connection {
         @apply fill-none stroke-2 transition-all;
   
         &.completed {
@@ -270,8 +271,7 @@
       @apply absolute flex items-center gap-3 p-3
              bg-base-100 rounded-xl shadow-md
              border-2 border-transparent
-             cursor-pointer transition-all
-             hover:shadow-lg hover:scale-105;
+             cursor-pointer transition-all;
   
       &.completed {
         @apply border-success bg-success/10;
@@ -285,25 +285,29 @@
         @apply ring-2 ring-primary ring-offset-2;
       }
   
-      .node-icon {
+      &.node-icon {
         @apply text-2xl;
       }
   
-      .node-content {
+      &.node-content {
         @apply flex flex-col min-w-[150px];
   
-        h4 {
+        & h4 {
           @apply font-medium;
         }
       }
   
-      .progress-bar {
+      &.progress-bar {
         @apply mt-2 h-1 bg-base-200 rounded-full overflow-hidden;
   
-        .progress-fill {
+        &.progress-fill {
           @apply h-full bg-primary transition-all;
         }
       }
+    }
+
+    .node:hover {
+      @apply shadow-lg scale-105;
     }
   
     .node-tooltip {
@@ -312,30 +316,30 @@
              border border-base-300
              w-64 z-10;
   
-      h5 {
+      & h5 {
         @apply text-lg font-semibold mb-2;
       }
   
-      p {
+      & p {
         @apply text-sm text-base-content/80 mb-3;
       }
   
-      .stats {
+      &.stats {
         @apply flex flex-wrap gap-3 text-sm text-base-content/60 mb-3;
       }
   
-      .prerequisites {
+      &.prerequisites {
         @apply text-sm;
   
-        h6 {
+        & h6 {
           @apply font-medium mb-1;
         }
   
-        ul {
+        & ul {
           @apply space-y-1;
         }
   
-        li {
+        & li {
           @apply flex items-center gap-2;
   
           &.completed {
@@ -353,9 +357,12 @@
              flex gap-2 p-2
              bg-base-100 rounded-lg shadow-lg;
   
-      button {
-        @apply p-2 rounded-lg
-               hover:bg-base-200 transition-colors;
+      & button {
+        @apply p-2 rounded-lg;
+      }
+
+      & button:hover {
+        @apply bg-base-200 transition-colors;
       }
     }
   
@@ -364,7 +371,7 @@
              flex flex-col items-center justify-center
              bg-base-200/80 backdrop-blur-sm;
   
-      .loading-spinner {
+      &.loading-spinner {
         @apply w-8 h-8 border-4 border-primary
                border-t-transparent rounded-full
                animate-spin mb-4;

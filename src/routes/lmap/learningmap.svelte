@@ -1,14 +1,15 @@
 <script lang="ts">
     import LearningPathMap from '$components/learning/LearningPathMap.svelte';
-    import { stemCore } from '$lib/core';
+    import StemCore from '@/lib/stemcore';
+    import { onMount } from 'svelte';
     
-    export let data;
+    export let data: { domainPath: string } = { domainPath: "" };
     const { domainPath } = data;
     
     let userProgress = {};
     
     onMount(async () => {
-      userProgress = await stemCore.getUserProgress(domainPath);
+      userProgress = await StemCore.getUserProgress(domainPath);
     });
   </script>
   

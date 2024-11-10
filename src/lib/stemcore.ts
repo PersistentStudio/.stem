@@ -169,6 +169,30 @@ class StemCore extends EventEmitter {
     }
   }
 
+  // Add this method to the StemCore class
+  public static async getUserProgress(domainPath: string): Promise<any> {
+    if (!this.currentUser) {
+        throw new Error('User is not authenticated');
+    }
+    try {
+        return await API.get(`/users/${this.currentUser.id}/progress?domainPath=${encodeURIComponent(domainPath)}`);
+    } catch (error) {
+        this.emit('error', error);
+        throw error;
+    }
+  }
+  
+  public static async getLearningPathStructure(domainPath: string): Promise<any> {
+    if (!this.currentUser) {
+        throw new Error('User is not authenticated');
+    }
+    try {
+        return await API.get(`/learning-paths/structure?domainPath=${encodeURIComponent(domainPath)}`);
+    } catch (error) {
+        this.emit('error', error);
+        throw error;
+    }
+}
   // Authentication and User Management
   public static async login(email: string, password: string): Promise<User> {
     try {

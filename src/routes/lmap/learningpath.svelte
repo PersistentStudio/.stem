@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { stemCore } from '$lib/core';
+    import StemCore from '@/lib/stemcore';
     
     export let domainPath: string;
     export let expertiseLevel: string;
@@ -17,11 +17,11 @@
     });
   
     async function loadLearningPath() {
-      learningPath = await stemCore.getUserLearningPath(domainPath);
+      learningPath = await StemCore.getUserLearningPath(domainPath);
     }
   
     async function loadRecommendations() {
-      recommendations = await stemCore.getRecommendations({
+      recommendations = await StemCore.getRecommendations({
         domainPath,
         expertiseLevel,
         currentTopic: selectedTopic
@@ -122,7 +122,7 @@
     section {
       @apply space-y-3;
   
-      h3 {
+      & h3 {
         @apply text-lg font-semibold;
       }
     }
@@ -130,15 +130,15 @@
     .progress-stats {
       @apply grid grid-cols-3 gap-2;
   
-      .stat {
+      &.stat {
         @apply flex flex-col items-center p-2
                bg-base-200 rounded-lg;
   
-        .value {
+        &.value {
           @apply text-xl font-bold;
         }
   
-        .label {
+        &.label {
           @apply text-xs text-base-content/60;
         }
       }
@@ -148,12 +148,12 @@
       @apply relative h-3 bg-base-200 rounded-full
              overflow-hidden;
   
-      .progress-fill {
+      &.progress-fill {
         @apply absolute h-full bg-primary
                transition-all duration-500;
       }
   
-      .progress-label {
+      &.progress-label {
         @apply absolute inset-0 flex items-center justify-center
                text-xs font-medium text-primary-content;
       }
@@ -162,48 +162,54 @@
     .recommendation-list {
       @apply space-y-2;
   
-      .recommendation-item {
+      &.recommendation-item {
         @apply flex items-center gap-3 w-full p-3
-               bg-base-200 rounded-lg
-               hover:bg-base-300 transition-colors;
+               bg-base-200 rounded-lg;
   
-        .icon {
+        &.icon {
           @apply text-xl;
         }
   
-        .info {
+        &.info {
           @apply flex flex-col items-start;
   
-          .title {
+          &.title {
             @apply font-medium;
           }
   
-          .type {
+          &.type {
             @apply text-xs text-base-content/60;
           }
         }
   
-        .arrow {
+        &.arrow {
           @apply ml-auto text-base-content/40;
         }
+      }
+
+      &.recommendation-list:hover {
+        @apply bg-base-300 transition-colors;
       }
     }
   
     .resource-grid {
       @apply grid grid-cols-2 gap-2;
   
-      .resource-card {
+      &.resource-card {
         @apply flex flex-col items-center gap-2 p-4
-               bg-base-200 rounded-lg
-               hover:bg-base-300 transition-colors;
+               bg-base-200 rounded-lg;
   
-        .icon {
+        &.icon {
           @apply text-2xl;
         }
   
-        .label {
+        &.label {
           @apply text-sm font-medium;
         }
+      }
+
+      &.resource-card:hover {
+        @apply bg-base-300 transition-colors;
       }
     }
   
