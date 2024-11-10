@@ -1,0 +1,680 @@
+{
+    "domains": {
+      "mathematics": {
+        "name": "Mathematics",
+        "paths": ["math.stem", "mathematics.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Mathematics",
+            "paths": ["beginner.math.stem", "beginner.mathematics.stem"],
+            "topics": {
+              "number_theory": {
+                "name": "Basic Number Theory",
+                "paths": ["basic.number.theory.math.stem"],
+                "topics": ["Basic Number Properties", "Divisibility", "Prime Numbers"],
+                "unlocks": ["intermediate.number_theory", "basic.set_theory"]
+              },
+              "set_theory": {
+                "name": "Basic Set Theory", 
+                "paths": ["basic.set.theory.math.stem"],
+                "topics": ["Basic Set Operations", "Venn Diagrams", "Set Notation"],
+                "unlocks": ["intermediate.set_theory", "basic.logic"]
+              },
+              "logic": {
+                "name": "Basic Logic",
+                "paths": ["basic.logic.math.stem"],
+                "topics": ["Propositional Logic", "Truth Tables", "Basic Inference"],
+                "unlocks": ["intermediate.logic", "basic.proof_writing"]
+              },
+              "proof_writing": {
+                "name": "Basic Proofs",
+                "paths": ["basic.proof.math.stem"],
+                "topics": ["Direct Proofs", "Contradiction", "Basic Induction"],
+                "unlocks": ["intermediate.proof_writing", "basic.linear_algebra"]
+              },
+              "linear_algebra": {
+                "name": "Basic Linear Algebra",
+                "paths": ["basic.linear.algebra.math.stem"],
+                "topics": ["Vectors", "Matrices", "Systems of Equations"],
+                "unlocks": ["intermediate.linear_algebra", "basic.abstract_algebra"]
+              },
+              "abstract_algebra": {
+                "name": "Basic Abstract Algebra",
+                "paths": ["basic.abstract.algebra.math.stem"],
+                "topics": ["Basic Structures", "Modular Arithmetic", "Symmetries"],
+                "unlocks": ["intermediate.abstract_algebra"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Mathematics",
+            "paths": ["intermediate.math.stem", "intermediate.mathematics.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "number_theory": {
+                "name": "Intermediate Number Theory",
+                "paths": ["intermediate.number.theory.math.stem"],
+                "prerequisites": ["basic.number_theory"],
+                "topics": ["Modular Arithmetic", "Diophantine Equations"],
+                "unlocks": ["advanced.number_theory"]
+              },
+              "set_theory": {
+                "name": "Intermediate Set Theory",
+                "paths": ["intermediate.set.theory.math.stem"],
+                "prerequisites": ["basic.set_theory"],
+                "topics": ["Relations and Functions", "Cardinality"],
+                "unlocks": ["advanced.set_theory"]
+              },
+              "logic": {
+                "name": "Intermediate Logic",
+                "paths": ["intermediate.logic.math.stem"],
+                "prerequisites": ["basic.logic"],
+                "topics": ["Predicate Logic", "Formal Systems"],
+                "unlocks": ["advanced.logic"]
+              },
+              "proof_writing": {
+                "name": "Intermediate Proofs",
+                "paths": ["intermediate.proof.math.stem"],
+                "prerequisites": ["basic.proof_writing"],
+                "topics": ["Advanced Induction", "Combinatorial Proofs"],
+                "unlocks": ["advanced.proof_writing"]
+              },
+              "linear_algebra": {
+                "name": "Intermediate Linear Algebra",
+                "paths": ["intermediate.linear.algebra.math.stem"],
+                "prerequisites": ["basic.linear_algebra"],
+                "topics": ["Vector Spaces", "Linear Transformations"],
+                "unlocks": ["advanced.linear_algebra"]
+              },
+              "abstract_algebra": {
+                "name": "Intermediate Abstract Algebra",
+                "paths": ["intermediate.abstract.algebra.math.stem"],
+                "prerequisites": ["basic.abstract_algebra"],
+                "topics": ["Groups", "Rings", "Fields"],
+                "unlocks": ["advanced.abstract_algebra"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Mathematics",
+            "paths": ["advanced.math.stem", "advanced.mathematics.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "number_theory": {
+                "name": "Advanced Number Theory",
+                "paths": ["advanced.number.theory.math.stem"],
+                "prerequisites": ["intermediate.number_theory"],
+                "topics": ["Algebraic Number Theory", "Analytic Number Theory"]
+              },
+              "set_theory": {
+                "name": "Advanced Set Theory",
+                "paths": ["advanced.set.theory.math.stem"],
+                "prerequisites": ["intermediate.set_theory"],
+                "topics": ["Axiomatic Set Theory", "Transfinite Numbers"]
+              },
+              "logic": {
+                "name": "Advanced Logic",
+                "paths": ["advanced.logic.math.stem"],
+                "prerequisites": ["intermediate.logic"],
+                "topics": ["Modal Logic", "Mathematical Logic"]
+              },
+              "proof_writing": {
+                "name": "Advanced Proofs",
+                "paths": ["advanced.proof.math.stem"],
+                "prerequisites": ["intermediate.proof_writing"],
+                "topics": ["Complex Proof Techniques", "Research Level Proofs"]
+              },
+              "linear_algebra": {
+                "name": "Advanced Linear Algebra",
+                "paths": ["advanced.linear.algebra.math.stem"],
+                "prerequisites": ["intermediate.linear_algebra"],
+                "topics": ["Advanced Matrix Theory", "Spectral Theory"]
+              },
+              "abstract_algebra": {
+                "name": "Advanced Abstract Algebra",
+                "paths": ["advanced.abstract.algebra.math.stem"],
+                "prerequisites": ["intermediate.abstract_algebra"],
+                "topics": ["Galois Theory", "Representation Theory"]
+              }
+            }
+          }
+        }
+      },
+      "natural_sciences": {
+        "name": "Natural Sciences",
+        "paths": ["nat.stem", "natural.sciences.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Natural Sciences",
+            "paths": ["beginner.nat.stem", "beginner.natural.sciences.stem"],
+            "topics": {
+              "biology": {
+                "name": "Basic Biology",
+                "paths": ["basic.biology.nat.stem"],
+                "topics": ["Cell Structure", "Cell Function", "Cell Division"],
+                "unlocks": ["intermediate.biology", "basic.chemistry"]
+              },
+              "chemistry": {
+                "name": "Basic Chemistry",
+                "paths": ["basic.chemistry.nat.stem"],
+                "topics": ["Atomic Structure", "Chemical Bonding", "Reactions"],
+                "unlocks": ["intermediate.chemistry", "basic.physics"]
+              },
+              "physics": {
+                "name": "Basic Physics",
+                "paths": ["basic.physics.nat.stem"],
+                "topics": ["Motion", "Forces", "Energy"],
+                "unlocks": ["intermediate.physics", "basic.astronomy"]
+              },
+              "astronomy": {
+                "name": "Basic Astronomy",
+                "paths": ["basic.astronomy.nat.stem"],
+                "topics": ["Solar System", "Planets", "Moons"],
+                "unlocks": ["intermediate.astronomy"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Natural Sciences",
+            "paths": ["intermediate.nat.stem", "intermediate.natural.sciences.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "biology": {
+                "name": "Intermediate Biology",
+                "paths": ["intermediate.biology.nat.stem"],
+                "prerequisites": ["basic.biology"],
+                "topics": ["Cell Signaling", "Cellular Metabolism"],
+                "unlocks": ["advanced.biology"]
+              },
+              "chemistry": {
+                "name": "Intermediate Chemistry",
+                "paths": ["intermediate.chemistry.nat.stem"],
+                "prerequisites": ["basic.chemistry"],
+                "topics": ["Thermodynamics", "Kinetics"],
+                "unlocks": ["advanced.chemistry"]
+              },
+              "physics": {
+                "name": "Intermediate Physics",
+                "paths": ["intermediate.physics.nat.stem"],
+                "prerequisites": ["basic.physics"],
+                "topics": ["Rotational Motion", "Gravitation"],
+                "unlocks": ["advanced.physics"]
+              },
+              "astronomy": {
+                "name": "Intermediate Astronomy",
+                "paths": ["intermediate.astronomy.nat.stem"],
+                "prerequisites": ["basic.astronomy"],
+                "topics": ["Planetary Formation", "Exoplanets"],
+                "unlocks": ["advanced.astronomy"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Natural Sciences",
+            "paths": ["advanced.nat.stem", "advanced.natural.sciences.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "biology": {
+                "name": "Advanced Biology",
+                "paths": ["advanced.biology.nat.stem"],
+                "prerequisites": ["intermediate.biology"],
+                "topics": ["Molecular Biology", "Cell Research Methods"]
+              },
+              "chemistry": {
+                "name": "Advanced Chemistry",
+                "paths": ["advanced.chemistry.nat.stem"],
+                "prerequisites": ["intermediate.chemistry"],
+                "topics": ["Quantum Chemistry", "Spectroscopy"]
+              },
+              "physics": {
+                "name": "Advanced Physics",
+                "paths": ["advanced.physics.nat.stem"],
+                "prerequisites": ["intermediate.physics"],
+                "topics": ["Classical Mechanics", "Fluid Dynamics"]
+              },
+              "astronomy": {
+                "name": "Advanced Astronomy",
+                "paths": ["advanced.astronomy.nat.stem"],
+                "prerequisites": ["intermediate.astronomy"],
+                "topics": ["Planetary Geology", "Astrobiology"]
+              }
+            }
+          }
+        }
+      },
+      "computer_science": {
+        "name": "Computer Science",
+        "paths": ["cs.stem", "computer.science.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Computer Science",
+            "paths": ["beginner.cs.stem", "beginner.computer.science.stem"],
+            "topics": {
+              "programming": {
+                "name": "Basic Programming",
+                "paths": ["basic.programming.cs.stem"],
+                "topics": ["Variables", "Control Flow", "Functions"],
+                "unlocks": ["intermediate.programming", "basic.systems"]
+              },
+              "systems": {
+                "name": "Basic Systems",
+                "paths": ["basic.systems.cs.stem"],
+                "topics": ["OS Basics", "Process Management", "Memory"],
+                "unlocks": ["intermediate.systems", "basic.theory"]
+              },
+              "theory": {
+                "name": "Basic Theory",
+                "paths": ["basic.theory.cs.stem"],
+                "topics": ["Automata", "Regular Languages", "Basic Complexity"],
+                "unlocks": ["intermediate.theory", "basic.ai_ml"]
+              },
+              "ai_ml": {
+                "name": "Basic AI & ML",
+                "paths": ["basic.ai.ml.cs.stem"],
+                "topics": ["Supervised Learning", "Basic Models", "Evaluation"],
+                "unlocks": ["intermediate.ai_ml"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Computer Science",
+            "paths": ["intermediate.cs.stem", "intermediate.computer.science.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "programming": {
+                "name": "Intermediate Programming",
+                "paths": ["intermediate.programming.cs.stem"],
+                "prerequisites": ["basic.programming"],
+                "topics": ["Object-Oriented Programming", "Data Structures"],
+                "unlocks": ["advanced.programming"]
+              },
+              "systems": {
+                "name": "Intermediate Systems",
+                "paths": ["intermediate.systems.cs.stem"],
+                "prerequisites": ["basic.systems"],
+                "topics": ["File Systems", "Scheduling"],
+                "unlocks": ["advanced.systems"]
+              },
+              "theory": {
+                "name": "Intermediate Theory",
+                "paths": ["intermediate.theory.cs.stem"],
+                "prerequisites": ["basic.theory"],
+                "topics": ["Context-Free Languages", "Turing Machines"],
+                "unlocks": ["advanced.theory"]
+              },
+              "ai_ml": {
+                "name": "Intermediate AI & ML",
+                "paths": ["intermediate.ai.ml.cs.stem"],
+                "prerequisites": ["basic.ai_ml"],
+                "topics": ["Deep Learning", "Neural Networks"],
+                "unlocks": ["advanced.ai_ml"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Computer Science",
+            "paths": ["advanced.cs.stem", "advanced.computer.science.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "programming": {
+                "name": "Advanced Programming",
+                "paths": ["advanced.programming.cs.stem"],
+                "prerequisites": ["intermediate.programming"],
+                "topics": ["Design Patterns", "Advanced Algorithms"]
+              },
+              "systems": {
+                "name": "Advanced Systems",
+                "paths": ["advanced.systems.cs.stem"],
+                "prerequisites": ["intermediate.systems"],
+                "topics": ["Distributed OS", "Security"]
+              },
+              "theory": {
+                "name": "Advanced Theory",
+                "paths": ["advanced.theory.cs.stem"],
+                "prerequisites": ["intermediate.theory"],
+                "topics": ["Computability Theory", "Advanced Complexity"]
+              },
+              "ai_ml": {
+                "name": "Advanced AI & ML",
+                "paths": ["advanced.ai.ml.cs.stem"],
+                "prerequisites": ["intermediate.ai_ml"],
+                "topics": ["Reinforcement Learning", "Advanced AI"]
+              }
+            }
+          }
+        }
+      },
+      "humanities": {
+        "name": "Humanities",
+        "paths": ["hum.stem", "humanities.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Humanities",
+            "paths": ["beginner.hum.stem", "beginner.humanities.stem"],
+            "topics": {
+              "philosophy": {
+                "name": "Basic Philosophy",
+                "paths": ["basic.philosophy.hum.stem"],
+                "topics": ["Reality and Existence", "Mind-Body Problem", "Free Will"],
+                "unlocks": ["intermediate.philosophy", "basic.history"]
+              },
+              "history": {
+                "name": "Basic History",
+                "paths": ["basic.history.hum.stem"],
+                "topics": ["Ancient Civilizations", "Medieval Period", "Modern Era"],
+                "unlocks": ["intermediate.history", "basic.literature"]
+              },
+              "literature": {
+                "name": "Basic Literature",
+                "paths": ["basic.literature.hum.stem"],
+                "topics": ["Elements of Literature", "Genre Studies", "Close Reading"],
+                "unlocks": ["intermediate.literature"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Humanities",
+            "paths": ["intermediate.hum.stem", "intermediate.humanities.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "philosophy": {
+                "name": "Intermediate Philosophy",
+                "paths": ["intermediate.philosophy.hum.stem"],
+                "prerequisites": ["basic.philosophy"],
+                "topics": ["Causation", "Time and Space", "Identity"],
+                "unlocks": ["advanced.philosophy"]
+              },
+              "history": {
+                "name": "Intermediate History",
+                "paths": ["intermediate.history.hum.stem"],
+                "prerequisites": ["basic.history"],
+                "topics": ["Economic History", "Cultural History"],
+                "unlocks": ["advanced.history"]
+              },
+              "literature": {
+                "name": "Intermediate Literature",
+                "paths": ["intermediate.literature.hum.stem"],
+                "prerequisites": ["basic.literature"],
+                "topics": ["Literary Theory", "Comparative Literature"],
+                "unlocks": ["advanced.literature"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Humanities",
+            "paths": ["advanced.hum.stem", "advanced.humanities.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "philosophy": {
+                "name": "Advanced Philosophy",
+                "paths": ["advanced.philosophy.hum.stem"],
+                "prerequisites": ["intermediate.philosophy"],
+                "topics": ["Contemporary Metaphysics", "Modal Logic"]
+              },
+              "history": {
+                "name": "Advanced History",
+                "paths": ["advanced.history.hum.stem"],
+                "prerequisites": ["intermediate.history"],
+                "topics": ["Historiography", "Historical Methods"]
+              },
+              "literature": {
+                "name": "Advanced Literature",
+                "paths": ["advanced.literature.hum.stem"],
+                "prerequisites": ["intermediate.literature"],
+                "topics": ["Critical Theory", "Advanced Poetics"]
+              }
+            }
+          }
+        }
+      },
+      "social_sciences": {
+        "name": "Social Sciences",
+        "paths": ["soc.stem", "social.sciences.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Social Sciences",
+            "paths": ["beginner.soc.stem", "beginner.social.sciences.stem"],
+            "topics": {
+              "economics": {
+                "name": "Basic Economics",
+                "paths": ["basic.economics.soc.stem"],
+                "topics": ["Supply and Demand", "Market Structures", "Consumer Theory"],
+                "unlocks": ["intermediate.economics", "basic.psychology"]
+              },
+              "psychology": {
+                "name": "Basic Psychology",
+                "paths": ["basic.psychology.soc.stem"],
+                "topics": ["Memory", "Perception", "Learning"],
+                "unlocks": ["intermediate.psychology", "basic.sociology"]
+              },
+              "sociology": {
+                "name": "Basic Sociology",
+                "paths": ["basic.sociology.soc.stem"],
+                "topics": ["Classical Theory", "Modern Theory", "Social Structure"],
+                "unlocks": ["intermediate.sociology"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Social Sciences",
+            "paths": ["intermediate.soc.stem", "intermediate.social.sciences.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "economics": {
+                "name": "Intermediate Economics",
+                "paths": ["intermediate.economics.soc.stem"],
+                "prerequisites": ["basic.economics"],
+                "topics": ["Game Theory", "Industrial Organization"],
+                "unlocks": ["advanced.economics"]
+              },
+              "psychology": {
+                "name": "Intermediate Psychology",
+                "paths": ["intermediate.psychology.soc.stem"],
+                "prerequisites": ["basic.psychology"],
+                "topics": ["Decision Making", "Language Processing"],
+                "unlocks": ["advanced.psychology"]
+              },
+              "sociology": {
+                "name": "Intermediate Sociology",
+                "paths": ["intermediate.sociology.soc.stem"],
+                "prerequisites": ["basic.sociology"],
+                "topics": ["Contemporary Theory", "Social Movements"],
+                "unlocks": ["advanced.sociology"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Social Sciences",
+            "paths": ["advanced.soc.stem", "advanced.social.sciences.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "economics": {
+                "name": "Advanced Economics",
+                "paths": ["advanced.economics.soc.stem"],
+                "prerequisites": ["intermediate.economics"],
+                "topics": ["Behavioral Economics", "Experimental Economics"]
+              },
+              "psychology": {
+                "name": "Advanced Psychology",
+                "paths": ["advanced.psychology.soc.stem"],
+                "prerequisites": ["intermediate.psychology"],
+                "topics": ["Cognitive Neuroscience", "Advanced Research Methods"]
+              },
+              "sociology": {
+                "name": "Advanced Sociology",
+                "paths": ["advanced.sociology.soc.stem"],
+                "prerequisites": ["intermediate.sociology"],
+                "topics": ["Critical Theory", "Advanced Methodology"]
+              }
+            }
+          }
+        }
+      },
+      "arts": {
+        "name": "Arts",
+        "paths": ["arts.stem", "arts.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Arts",
+            "paths": ["beginner.arts.stem", "beginner.arts.stem"],
+            "topics": {
+              "visual_arts": {
+                "name": "Basic Visual Arts",
+                "paths": ["basic.visual.arts.stem"],
+                "topics": ["Basic Drawing", "Color Theory", "Composition"],
+                "unlocks": ["intermediate.visual_arts", "basic.performing_arts"]
+              },
+              "performing_arts": {
+                "name": "Basic Performing Arts",
+                "paths": ["basic.performing.arts.stem"],
+                "topics": ["Music Theory", "Ear Training", "Performance"],
+                "unlocks": ["intermediate.performing_arts"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Arts",
+            "paths": ["intermediate.arts.stem", "intermediate.arts.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "visual_arts": {
+                "name": "Intermediate Visual Arts",
+                "paths": ["intermediate.visual.arts.stem"],
+                "prerequisites": ["basic.visual_arts"],
+                "topics": ["Figure Drawing", "Oil Painting"],
+                "unlocks": ["advanced.visual_arts"]
+              },
+              "performing_arts": {
+                "name": "Intermediate Performing Arts",
+                "paths": ["intermediate.performing.arts.stem"],
+                "prerequisites": ["basic.performing_arts"],
+                "topics": ["Composition", "Music History"],
+                "unlocks": ["advanced.performing_arts"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Arts",
+            "paths": ["advanced.arts.stem", "advanced.arts.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "visual_arts": {
+                "name": "Advanced Visual Arts",
+                "paths": ["advanced.visual.arts.stem"],
+                "prerequisites": ["intermediate.visual_arts"],
+                "topics": ["Contemporary Techniques", "Studio Practice"]
+              },
+              "performing_arts": {
+                "name": "Advanced Performing Arts",
+                "paths": ["advanced.performing.arts.stem"],
+                "prerequisites": ["intermediate.performing_arts"],
+                "topics": ["Advanced Theory", "Orchestration"]
+              }
+            }
+          }
+        }
+      },
+      "professional": {
+        "name": "Professional Studies",
+        "paths": ["prof.stem", "professional.studies.stem"],
+        "subdomains": {
+          "beginner": {
+            "name": "Beginner Professional Studies",
+            "paths": ["beginner.prof.stem", "beginner.professional.studies.stem"],
+            "topics": {
+              "business": {
+                "name": "Basic Business",
+                "paths": ["basic.business.prof.stem"],
+                "topics": ["Principles of Management", "Leadership", "Organization"],
+                "unlocks": ["intermediate.business", "basic.finance"]
+              },
+              "finance": {
+                "name": "Basic Finance",
+                "paths": ["basic.finance.prof.stem"],
+                "topics": ["Financial Statements", "Time Value of Money", "Risk Management"],
+                "unlocks": ["intermediate.finance", "basic.law"]
+              },
+              "law": {
+                "name": "Basic Law",
+                "paths": ["basic.law.prof.stem"],
+                "topics": ["Contract Law", "Corporate Law", "Property Law"],
+                "unlocks": ["intermediate.law", "basic.healthcare"]
+              },
+              "healthcare": {
+                "name": "Basic Healthcare",
+                "paths": ["basic.healthcare.prof.stem"],
+                "topics": ["Healthcare Systems", "Medical Ethics", "Patient Care"],
+                "unlocks": ["intermediate.healthcare"]
+              }
+            }
+          },
+          "intermediate": {
+            "name": "Intermediate Professional Studies",
+            "paths": ["intermediate.prof.stem", "intermediate.professional.studies.stem"],
+            "prerequisites": ["beginner"],
+            "topics": {
+              "business": {
+                "name": "Intermediate Business",
+                "paths": ["intermediate.business.prof.stem"],
+                "prerequisites": ["basic.business"],
+                "topics": ["Strategic Management", "Operations"],
+                "unlocks": ["advanced.business"]
+              },
+              "finance": {
+                "name": "Intermediate Finance",
+                "paths": ["intermediate.finance.prof.stem"],
+                "prerequisites": ["basic.finance"],
+                "topics": ["Capital Budgeting", "Financial Planning"],
+                "unlocks": ["advanced.finance"]
+              },
+              "law": {
+                "name": "Intermediate Law",
+                "paths": ["intermediate.law.prof.stem"],
+                "prerequisites": ["basic.law"],
+                "topics": ["International Law", "IP Law"],
+                "unlocks": ["advanced.law"]
+              },
+              "healthcare": {
+                "name": "Intermediate Healthcare",
+                "paths": ["intermediate.healthcare.prof.stem"],
+                "prerequisites": ["basic.healthcare"],
+                "topics": ["Healthcare Policy", "Quality Management"],
+                "unlocks": ["advanced.healthcare"]
+              }
+            }
+          },
+          "advanced": {
+            "name": "Advanced Professional Studies",
+            "paths": ["advanced.prof.stem", "advanced.professional.studies.stem"],
+            "prerequisites": ["intermediate"],
+            "topics": {
+              "business": {
+                "name": "Advanced Business",
+                "paths": ["advanced.business.prof.stem"],
+                "prerequisites": ["intermediate.business"],
+                "topics": ["Change Management", "International Business"]
+              },
+              "finance": {
+                "name": "Advanced Finance",
+                "paths": ["advanced.finance.prof.stem"],
+                "prerequisites": ["intermediate.finance"],
+                "topics": ["Mergers & Acquisitions", "Corporate Strategy"]
+              },
+              "law": {
+                "name": "Advanced Law",
+                "paths": ["advanced.law.prof.stem"],
+                "prerequisites": ["intermediate.law"],
+                "topics": ["Securities Law", "Antitrust Law"]
+              },
+              "healthcare": {
+                "name": "Advanced Healthcare",
+                "paths": ["advanced.healthcare.prof.stem"],
+                "prerequisites": ["intermediate.healthcare"],
+                "topics": ["Healthcare Innovation", "Strategic Planning"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
